@@ -65,3 +65,8 @@ echo 'KERNEL=="axp20x-battery", ATTR{constant_charge_current_max}="2200000", ATT
 #
 #
 #
+# Apply the workaround mkinitramfs itself suggests
+echo "MODULES=most" | sudo tee -a /etc/initramfs-tools/initramfs.conf
+
+# Now finish configuring the stuck packages
+sudo dpkg --configure -a
