@@ -53,9 +53,9 @@ sudo go install github.com/MattiaPun/SubTUI@latest
 mv ~/go/bin/SubTUI ~/go/bin/subtui
 mkdir ~/.config/subtui
 nano ~/.config/subtui/credentials.toml
-url = 
-username = 
-password = 
+url = 'http://100.75.138.42:4533'
+username = 'admin'
+password = '@8RDwNvER4teM%uMpBJ3MuVbQ4Ye8$5Yr@xMP!FM#N5KfrJuP'
 
 #Note-taking app
 #https://github.com/SourcewareLab/Toney
