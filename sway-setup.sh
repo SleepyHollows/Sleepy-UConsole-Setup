@@ -90,8 +90,12 @@ EOF
 mkdir -p ~/.config/alacritty
 cat > ~/.config/alacritty/alacritty.toml << 'EOF'
 [window]
-
 decorations = "none"
+[keyboard]
+bindings = [
+    { key = "PrintScreen", action = "Paste" },
+    { key = "Space", mods = "Control", action = "ToggleViMode" },
+]
 EOF
 
 #Set Sway for bootup
