@@ -70,3 +70,5 @@ echo "MODULES=most" | sudo tee -a /etc/initramfs-tools/initramfs.conf
 
 # Now finish configuring the stuck packages
 sudo dpkg --configure -a
+
+sudo apt-get update

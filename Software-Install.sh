@@ -2,11 +2,22 @@
 sudo apt install -y build-essential pkg-config git curl bc htop mc byobu \
     libxcb1-dev libasound2-dev libssl-dev golang
 
-# desktop
-sudo apt install -y vlc libavcodec-extra flameshot transmission-gtk acpi
+# Bluetui, for easy bluetooth management
+cargo install bluetui
+
+# Librawolf for a browser
+sudo apt update && sudo apt install extrepo -y
+sudo extrepo enable librewolf && sudo extrepo update librewolf
+sudo apt update && sudo apt install librewolf -y
 
 # yt-dlp separately, so it can self-update
-pipx install yt-dlp
+#pipx install yt-dlp
+
+#thefuck, for command fixes
+sudo apt install the fuck
+cat >>~/.bashrc << 'EOF'
+eval $(thefuck --alias)
+EOF
 
 #Microsoft Word viewer
 #https://github.com/bgreenwell/doxx
@@ -52,10 +63,11 @@ pip install nomadnet
 sudo go install github.com/MattiaPun/SubTUI@latest
 mv ~/go/bin/SubTUI ~/go/bin/subtui
 mkdir ~/.config/subtui
-nano ~/.config/subtui/credentials.toml
-url = 'http://100.75.138.42:4533'
+cat >> ~/.config/subtui/credentials.toml << 'EOF'
+url = 'http://:4533'
 username = 'admin'
-password = '@8RDwNvER4teM%uMpBJ3MuVbQ4Ye8$5Yr@xMP!FM#N5KfrJuP'
+password = ''
+EOF
 
 #Note-taking app
 #https://github.com/SourcewareLab/Toney
@@ -73,10 +85,6 @@ sudo apt install -y python3-dev pkg-config libdbus-1-dev libglib2.0-dev build-es
 curl -LsSf https://astral.sh/uv/install.sh | sh
 uv tool install "viu-media[standard]"
 
-#Youtube
-sudo apt install -y build-essential pkg-config git autoconf automake libtool libmpv-dev libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev mpv ffmpeg chafa
-cargo install --git https://github.com/siriusmart/youtube-tui
-
 #Excel editor
 git clone https://github.com/bgreenwell/xleak.git
 cd xleak
@@ -86,9 +94,9 @@ cargo install --path .
 cargo install --git https://github.com/itsjunetime/tdf.git
 
 #Steam Gaming
-https://github.com/Drackrath/Aurelia
-sudo apt-get update
-sudo apt-get install build-essential pkg-config libssl-dev libx11-dev libxi-dev \
- libxrandr-dev libxinerama-dev libxcursor-dev libxkbcommon-dev libasound2-dev \
- libudev-dev libwayland-dev libgtk-3-dev libpulse-dev libdbus-1-dev \
- libegl1-mesa-dev libgles2-mesa-dev liblzma-dev
+#https://github.com/Drackrath/Aurelia
+#sudo apt-get update
+#sudo apt-get install build-essential pkg-config libssl-dev libx11-dev libxi-dev \
+# libxrandr-dev libxinerama-dev libxcursor-dev libxkbcommon-dev libasound2-dev \
+# libudev-dev libwayland-dev libgtk-3-dev libpulse-dev libdbus-1-dev \
+# libegl1-mesa-dev libgles2-mesa-dev liblzma-dev

@@ -6,8 +6,8 @@ flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/fl
 
 sudo apt install cargo
 
-cho 'export PATH="$HOME/.go/bin:$PATH"' >> ~/.bashrc
+echo 'export PATH="$HOME/.go/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 
-cho 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
+echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
